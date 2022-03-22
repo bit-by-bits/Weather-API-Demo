@@ -20,7 +20,7 @@ form.addEventListener('submit', element => {
 })
 
 function submit() {
-    fetch('http://api.weatherapi.com/v1/search.json?q=' + input.value + '&key=37d6c36ac75e4292a71141551222203').then(response => response.json()).then(data => {
+    fetch('https://api.weatherapi.com/v1/search.json?q=' + input.value + '&key=37d6c36ac75e4292a71141551222203').then(response => response.json()).then(data => {
         if (data.length != 0) {
             for (let i = 0; i < link.length; i++) {
                 link[i].innerHTML = data[i].name;
@@ -32,7 +32,7 @@ function submit() {
 link.forEach(element => {
     element.addEventListener('click', () => {
 
-        fetch('http://api.weatherapi.com/v1/current.json?key=37d6c36ac75e4292a71141551222203&q=' + element.innerHTML).then(response => response.json()).then(data => {
+        fetch('https://api.weatherapi.com/v1/current.json?key=37d6c36ac75e4292a71141551222203&q=' + element.innerHTML).then(response => response.json()).then(data => {
             temp.innerHTML = data.current.temp_c + 'C / ' + data.current.temp_f + 'F';
             city.innerHTML = data.location.name;
             state.innerHTML = data.location.region + ', ' + data.location.country;
