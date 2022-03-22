@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+@mixin vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@mixin gradient {
+    &:hover {
+        cursor: pointer;
+        background-image: linear-gradient(to bottom right, rgb(33, 177, 254), rgb(194, 103, 228));
+        border-radius: 5px;
+    }
+}
+
+body {
+    overflow: none;
+    background: rgb(29, 41, 51);
+    @include horizontal();
+
+    .mainCard {
+        width: 65vw;
+        height: 100vh;
+        @include vertical();
+        justify-content: center;
+        gap: 5rem;
+
+        .image {
+            width: 20vw;
+            animation: animate 3s infinite;
+        }
+
+        .weather {
+            @include horizontal();
+            gap: 3rem;
+
+            #temp {
+                font-size: 3rem;
+            }
+
+            .area,
+            .info {
+                @include vertical();
+                font-size: 1.2rem;
+                height: 100%;
+                justify-content: space-between;
+            }
+
+            #city {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .sideCard {
+        width: 30vw;
+        height: 90vh;
+        border-radius: 20px;
+        @include vertical();
+        @include glass();
+        padding: 5rem 0;
+
+
+        .side1,
+        .side2,
+        .side3,
+        .side4 {
+            @include glass();
+            position: absolute;
+            border-radius: 3px;
+            animation: animate 3s ease infinite;
+        }
+
+        .side1 {
+            width: 4rem;
+            height: 4rem;
+            top: calc(40% - 2rem);
+            left: -2rem;
+        }
+
+        .side2 {
+            width: 2rem;
+            height: 2rem;
+            bottom: -1rem;
+            left: calc(30% - 1rem);
+        }
+
+        .side3 {
+            width: 3rem;
+            height: 3rem;
+            right: -1rem;
+            top: -1rem;
+        }
+
+        .side4 {
+            width: 5rem;
+            height: 5rem;
+            bottom: 30%;
+            right: -1rem;
+        }
+
+
+        .first {
+            @include horizontal();
+            justify-content: center;
+            gap: 1rem;
+
+            .location {
+                background: none;
+                outline: none;
+                border: none;
+                padding-left: 2rem;
+                width: 70%;
+                height: 40px;
+                font-size: 30px;
+                border-bottom: 1px solid grey;
+            }
+
+            #submit {
+                padding: 0.6rem;
+                @include gradient();
+            }
+        }
+
+        .second {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 1rem;
+            margin: 3rem 0;
+
+            .link {
+                padding: 0.6rem;
+                font-size: 1.3rem;
+                @include gradient();
+            }
+        }
+
+        .third {
+            @include vertical();
+            gap: 0.3rem;
+            width: 100%;
+
+            &>div {
+                font-size: 1.2rem;
+                padding: 0 5vw;
+                display: grid;
+                grid-template-columns: auto auto;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1) translateY(-20px);
+    }
+
+    50% {
+        transform: scale(1.1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1) translateY(-20px);
+    }
+}
+
+@media screen and (min-width:1700px) {
+    * {
+        font-size: larger;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    body {
+        flex-direction: column-reverse;
+        margin: 3rem 0;
+
+        .mainCard {
+            width: 100vw;
+            height: max-content;
+        }
+
+        .sideCard {
+            width: 60vw;
+            height: max-content;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    * {
+        font-size: small;
+    }
+
+    body {
+        .sideCard {
+            width: 70vw;
+
+            .first {
+                .location {
+                    width: 60%;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    body {
+        .mainCard {
+            .weather {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:460px) {
+    body {
+        .sideCard {
+            width: 70vw;
+
+            .first {
+                .location {
+                    width: 50%;
+                    font-size: 1.2rem;
+                    height: 2rem;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
