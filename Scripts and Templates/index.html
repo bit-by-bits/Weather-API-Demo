@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Claymate</title>
+    <link rel="shortcut icon" href="../Assets/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/ef6a6bed90.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS and SCSS/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="../Assets/logo.png" class="logo-image" />
+                <div class="logo-name">CLAYMATE</div>
+            </div>
+            <img src="../Assets/user.png" class="user-image" />
+            <div class="user-greeting">
+                <div class="greeting-up">Hello</div>
+                <div class="greeting-down">Hina Amano</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <form id="searchbar">
+                <input type="text" id="input" placeholder="Picnic Day..">
+                <i class="fa fa-dragon"></i>
+            </form>
+            <div class="result-box">
+                <div class="result" id="1"></div>
+                <div class="result" id="2"></div>
+                <div class="result" id="3"></div>
+                <div class="result" id="4"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <aside class="aside-left">
+            <div class="aside-top">
+                <i class="fa fa-map-location-dot"></i>
+                <i class="fa fa-pen-ruler"></i>
+                <i class="fa fa-calendar-days">
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?height=300&wkst=2&bgcolor=%23EF6C00&ctz=Asia%2FKolkata&showTitle=0&showTabs=0&showTz=0&showCalendars=0&showPrint=0"
+                        style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
+                </i>
+                <i class="fa fa-share"></i>
+
+            </div>
+            <div class="aside-bottom">
+                <i class="fa fa-door-open"></i>
+                <i class="fa fa-door-closed"></i>
+            </div>
+        </aside>
+        <article class="grid-boxes">
+            <div class="grid-box1">
+                <div class="grid-box-up">
+                    <i class="fa fa-smog"></i>
+                    <div class="grid-box-up-text">
+                        <div>Weather</div>
+                        <div class="weather">How's the weather</div>
+                    </div>
+                </div>
+                <div class="grid-box-middle">
+                    <div>
+                    <div class="temperature">0&deg;c</div>
+                    <div class="feels-like">0&deg;c</div>
+                    </div>
+                    <div class="condition">-NA-</div>
+                </div>
+                <div class="grid-box-down">
+                    <div class="grid-box-down-box1">
+                        <div>Pressure</div>
+                        <div class="pressure">00mb</div>
+                    </div>
+                    <div class="grid-box-down-box2">
+                        <div>Visibility</div>
+                        <div class="visibility">0.0km</div>
+                    </div>
+                    <div class="grid-box-down-box3">
+                        <div>Humidity</div>
+                        <div class="humidity">00%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box2">
+                <div class="grid-box-up">
+                    <i class="fa fa-wind"></i>
+                    <div class="grid-box-up-text">
+                        <div>Air Quality</div>
+                        <div class="pollution">Pollution: PM 0.0</div>
+                    </div>
+                </div>
+                <div class="grid-box-middle">
+                    <div>
+                    <div class="aqi">00</div>
+                    <div class="aqi-box">AQI</div>
+                    </div>
+                    <div class="wind">-NA-</div>
+                </div>
+                <div class="grid-box-down">
+                    <div class="hazard">
+                        <div>Good</div>
+                        <input type="range">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-box3"></div>
+            <div class="grid-box4"></div>
+        </article>
+    </main>
+    <aside class="aside-right">
+        <div class="place-info">
+            <div class="mood"></div>
+            <div class="city"></div>
+            <div class="temp"></div>
+        </div>
+        <div class="sun-graph"></div>
+        <div class="UV-rays"></div>
+        <div class="prediction"></div>
+    </aside>
+    <footer>
+        <div class="alert">
+            Haha Done!
+        </div>
+    </footer>
+</body>
+
+<script src="../Scripts and Templates/index.js"></script>
+
+</html>
